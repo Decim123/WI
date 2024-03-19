@@ -123,3 +123,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = '/main/'  # Путь, на который будут перенаправляться пользователи после успешного входа
+
+LOGIN_URL = '/accounts/login/'  # Путь к странице входа
