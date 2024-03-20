@@ -9,7 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('main/', include('main.urls')),
     path('', RedirectView.as_view(url='/main/', permanent=True)),
-    path('accounts/', include('django.contrib.auth.urls')),  # Используем встроенные URL-шаблоны для аутентификации Django
+    path('accounts/', include('django.contrib.auth.urls')),  # встроенные URL-шаблоны для аутентификации Django
     path('register/', register, name='register'),
 ]
 
