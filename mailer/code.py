@@ -4,9 +4,10 @@ from email.mime.text import MIMEText
 from code_generator import generate_accept_code
 
 sendler = "wimp.mailer@gmail.com"
-user = "aleksandrtuman@gmail.com"
+user = "imo.it.group.133@gmail.com" #получатель в будующем будет передаваться пока просто подставлять
 
-# Создание контейнера для сообщения - правильный MIME-тип multipart/alternative.
+
+# Создание контейнера для сообщения - правильный MIME-тип multipart/alternative.  aleksandrtuman@gmail.com
 msg = MIMEMultipart('alternative')
 msg['Subject'] = "Код подтверждения"
 msg['From'] = sendler
@@ -20,10 +21,12 @@ text = f"Привет!\nВот ваш код подтверждения: {key_co
 html = f"""
 <html>
   <head></head>
-  <body style="background-color: #E6FFE6; border-radius: 15px; padding: 20px;">
-    <div style="background-color: #4CAF50; padding: 10px; border-radius: 10px;">
-      <p style="font-family: Arial, sans-serif; font-size: 16px; color: #FFFFFF;">Привет!<br>
-      Вот ваш код подтверждения: <strong>{key_code}</strong></p>
+  <body style="background-color: #E6FFE6; border-radius: 15px; padding: 20px;height: 600px;width: 500px; text-align: center; margin:auto">
+    <div style="background: linear-gradient(to bottom, #87A3D2, #90D6A0); padding: 10px; border-radius: 10px;height: 95%;">
+      <p style="font-family: Arial, sans-serif; font-size: 40px; color: #FFFFFF;">WI<br>Привет!</p>
+      <p style="font-family: Arial, sans-serif; font-size: 20px; color: #FFFFFF;">Ваш код подтверждения: </p>
+      <p style="font-family: Arial, sans-serif; font-size: 40px; color: #FFFFFF;"><strong>{key_code}</strong></p> 
+      <p style="font-family: Arial, sans-serif; font-size: 20px; color: #FFFFFF;">Никому не сообщайте код подтверждения.Если вы не запрашивали код, то игнорируете это сообщение<br>С уважением, ваши кенты из WI</p>
     </div>
   </body>
 </html>
