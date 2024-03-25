@@ -19,7 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login_day.css' %}"> <!-- Светлая тема href="{% static 'css/login_day.css' %}"  Тёмная тема href="{% static 'css/login_night.css' %}"-->
 <!--===============================================================================================-->
 </head>
 <body>
@@ -27,13 +27,13 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-pic js-tilt" data-tilt>
+				<div class="login100-pic" > <!--class="login100-pic js-tilt"  data-tilt--> 
 					<img src="{% static 'images/img-01.png' %}" alt="IMG">
 				</div>
 
 				<form class="login100-form validate-form">
 					<span class="login100-form-title">
-						Login
+						Добрый (день) log
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -53,10 +53,28 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
+						<ul class="ul-login100-form-btn"> <!--Список с кнопками зайти через гугл вк телега-->
+							<il><button class="login100-form-btn-google">
+								<img src="{% static 'images/google.png' %}" alt="IMG">
+							</button>
+							</il>
+							<il><button class="login100-form-btn-google">
+								<img src="{% static 'images/telegram.png' %}" alt="IMG">
+							</button>
+							</il>
+							<il><button class="login100-form-btn-google">
+								<img src="{% static 'images/vk.png' %}" alt="IMG">
+							</button>
+							</il>
+						</ul>
+					</div>
+
+					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							Login
 						</button>
 					</div>
+					
 
 					<div class="text-center p-t-12">
 						<span class="txt1">
