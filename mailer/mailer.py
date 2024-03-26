@@ -6,7 +6,7 @@ from code_generator import generate_accept_code
 message_type = "email_chek" # or "change_password" email_chek
 
 sendler = "wimp.mailer@gmail.com" # sendler mail
-user = "cavenerfeed@gmail.com" #получатель в будующем будет передаваться пока просто подставлять
+user = "alaz2005tv@gmail.com" #получатель в будующем будет передаваться пока просто подставлять
 
 # Ваш код подтверждения
 key_code = str(generate_accept_code()) # генерация случайного 6 значного числа
@@ -29,7 +29,7 @@ if message_type == "email_chek":
         <p style="font-family: Arial, sans-serif; font-size: 40px; color: #FFFFFF;">WI<br>Привет!</p>
         <p style="font-family: Arial, sans-serif; font-size: 20px; color: #FFFFFF;">Ваш код подтверждения: </p>
         <p style="font-family: Arial, sans-serif; font-size: 40px; color: #FFFFFF;"><strong>{key_code}</strong></p> 
-        <p style="font-family: Arial, sans-serif; font-size: 20px; color: #FFFFFF;">Никому не сообщайте код подтверждения.Если вы не запрашивали код, то игнорируете это сообщение<br>С уважением, ваши кенты из WI</p>
+        <p style="font-family: Arial, sans-serif; font-size: 20px; color: #FFFFFF;">Никому не сообщайте код подтверждения.<br>Если вы не запрашивали код, то игнорируете это сообщение<br>С уважением, ваши кенты из WI</p>
         </div>
     </body>
     </html>
@@ -55,7 +55,7 @@ elif message_type == "change_password":
         <p style="font-family: Arial, sans-serif; font-size: 40px; color: #FFFFFF;">WI<br>Привет!</p>
         <p style="font-family: Arial, sans-serif; font-size: 20px; color: #FFFFFF;">Ваш код для восстановления пароля: </p>
         <p style="font-family: Arial, sans-serif; font-size: 40px; color: #FFFFFF;"><strong>{key_code}</strong></p> 
-        <p style="font-family: Arial, sans-serif; font-size: 20px; color: #FFFFFF;">Никому не сообщайте код подтверждения.Если вы не запрашивали код, то игнорируете это сообщение<br>С уважением, ваши кенты из WI</p>
+        <p style="font-family: Arial, sans-serif; font-size: 20px; color: #FFFFFF;">Никому не сообщайте код подтверждения.<br>Если вы не запрашивали код, то игнорируете это сообщение<br>С уважением, ваши кенты из WI</p>
         </div>
     </body>
     </html>
