@@ -1,13 +1,14 @@
 import os
 from pyrogram import Client, filters
-import asyncio
 
 # Настройки доступа к аккаунту и каналу
 api_id = '27476103'
 api_hash = '61343303593c3cc763b09e21a0fe5cb5'
 phone_number = '+79800770417'  # Номер телефона, связанный с вашим аккаунтом
 channel_id = -1002083751969  # Идентификатор вашего канала
-
+feed_text = {} # словарь для текста
+feed_media = {} # словарик для медиа
+feed_caption = {}
 # Создание клиента Pyrogram
 client = Client("session_name", api_id=api_id, api_hash=api_hash)
 
@@ -23,49 +24,51 @@ async def process_messages(client, message):
     media_directory = os.path.join(bot_directory, "media")
     
     # Если сообщение содержит медиафайл
-    if message.media:
+    if message.photo:
         print("Downloading media...")
         try:
             # Получаем расширение медиафайла
-            file_extension = ""
-            if message.photo:
-                file_extension = ".jpg"
-            elif message.video:
-                file_extension = ".mp4"
-            elif message.audio:
-                file_extension = ".mp3"
-            elif message.document:
-                file_extension = os.path.splitext(message.document.file_name)[1]
+            file_extension = ".jpg"
             
             # Формируем имя файла с использованием ID сообщения и расширения
             file_name = f"{message.id}{file_extension}"
+            full_file_path = os.path.join(media_directory, file_name)
             
             # Скачиваем медиафайл в директорию media внутри директории бота
-            file_path = await client.download_media(message, file_name=os.path.join(media_directory, file_name))
-            
-            # Дожидаемся завершения скачивания перед переименованием файла
-            while not os.path.exists(file_path):
-                await asyncio.sleep(0.1)
+            file_path = await client.download_media(message, file_name=full_file_path)
             
             # Убеждаемся, что файл загружен
             if os.path.exists(file_path):
-                # Получаем путь к временному файлу
-                temp_file_path = file_path + ".temp"
-                
-                # Переименовываем временный файл, убирая расширение ".temp"
-                os.rename(temp_file_path, file_path)
-                
                 print("Media downloaded successfully.")
+                feed_media[message.id] = f'/media/{file_name}' # добавляем путь к файлу в словарь
+                print(feed_media)
+                
+               
             else:
                 print("Error: File download failed.")
+
         except Exception as e:
             print(f"Error downloading media: {e}")
-    # Если сообщение текстовое
-    elif message.text:
-        print(f"Text: {message.text}")
-    # Если сообщение не содержит ни медиа, ни текст
     else:
-        print("Unsupported message type")
+        feed_media[message.id] = None
+        print(feed_media)
+
+     # Если у сообщения есть текст, выводим его
+    if message.caption:
+        feed_text[message.id] = message.caption
+        print(feed_text)
+    else:
+        feed_text[message.id] = None
+        print(feed_text)    
+
+    # Если сообщение текстовое
+    if message.text:
+        feed_text[message.id] = message.text
+        print(feed_text)
+    # Если сообщение не содержит текст
+    else:
+        feed_text[message.id] = None
+        print(feed_text)
 
 # Запуск основной программы
 client.run()
