@@ -2,119 +2,139 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<title>WI Login</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'css/login_day.css' %}"> <!-- Светлая тема href="{% static 'css/login_day.css' %}"  Тёмная тема href="{% static 'css/login_night.css' %}"-->
-<!--===============================================================================================-->
+    <title>WI Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================--> 
+    <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+    <!--===============================================================================================-->    
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login_day.css' %}" id="theme_css">
+    <!--===============================================================================================-->
 </head>
 <body>
-	
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<div class="login100-pic" > <!--class="login100-pic js-tilt"  data-tilt--> 
-					<img src="{% static 'images/img-01.png' %}" alt="IMG">
-				</div>
+    
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-pic">
+                    <img src="{% static 'images/img-01.png' %}" alt="IMG">
+                </div>
 
-				<form class="login100-form validate-form">
-					<span class="login100-form-title">
-						Добрый (день) log
-					</span>
+                <form class="login100-form validate-form">
+                    <span class="login100-form-title">
+                        Добрый (день) log
+                    </span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
-						</span>
-					</div>
+                    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" name="email" placeholder="Email">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-					</div>
-					
-					<div class="container-login100-form-btn">
-						<ul class="ul-login100-form-btn"> <!--Список с кнопками зайти через гугл вк телега-->
-							<il><button class="login100-form-btn-google">
-								<img src="{% static 'images/google.png' %}" alt="IMG">
-							</button>
-							</il>
-							<il><button class="login100-form-btn-google">
-								<img src="{% static 'images/telegram.png' %}" alt="IMG">
-							</button>
-							</il>
-							<il><button class="login100-form-btn-google">
-								<img src="{% static 'images/vk.png' %}" alt="IMG">
-							</button>
-							</il>
-						</ul>
-					</div>
+                    <div class="wrap-input100 validate-input" data-validate = "Password is required">
+                        <input class="input100" type="password" name="pass" placeholder="Password">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="container-login100-form-btn">
+                        <ul class="ul-login100-form-btn">
+                            <li><button class="login100-form-btn-google">
+                                <img src="{% static 'images/google.png' %}" alt="IMG">
+                            </button>
+                            </li>
+                            <li><button class="login100-form-btn-google">
+                                <img src="{% static 'images/telegram.png' %}" alt="IMG">
+                            </button>
+                            </li>
+                            <li><button class="login100-form-btn-google">
+                                <img src="{% static 'images/vk.png' %}" alt="IMG">
+                            </button>
+                            </li>
+                        </ul>
+                    </div>
 
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Login
-						</button>
-					</div>
-					
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn">
+                            Login
+                        </button>
+                    </div>
+                    
 
-					<div class="text-center p-t-12">
-						<span class="txt1">
-							Forgot
-						</span>
-						<a class="txt2" href="#">
-							Password?
-						</a>
-					</div>
+                    <div class="text-center p-t-12">
+                        <span class="txt1">
+                            Forgot
+                        </span>
+                        <a class="txt2" href="#">
+                            Password?
+                        </a>
+                    </div>
 
-					<div class="text-center p-t-136">
-						<a class="txt2" href="/register/">
-							Create your Account
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	
-	
+                    <div class="text-center p-t-136">
+                        <a class="txt2" href="/register/">
+                            Create your Account
+                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!--===============================================================================================--> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> #кто-то умный придумал аякс для такой развлекухи
+    <script>
+        $(document).ready(function() {
+            // Функция для обновления темы в зависимости от времени
+            function updateThemeBasedOnTime() {
+                const date = new Date();
+                const hours = date.getHours();
+                const loginForm = document.querySelector('.login100-form');
+                if (hours >= 6 && hours < 18) { // вот тут указываешь время с какого по какое светлая тема ну темная следоватльно в остальное 
+                    $('#theme_css').attr('href', '{% static "css/login_day.css" %}');
+                } else {
+                    $('#theme_css').attr('href', '{% static "css/login_night.css" %}');
+                }
+            }
 
-	
-<!--===============================================================================================-->	
-	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
-	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'vendor/tilt/tilt.jquery.min.js' %}"></script>
-	<script>
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-<!--===============================================================================================-->
-	<script src="{% static 'js/main.js' %}"></script>
+            // Функция для часиков в левом верхнем углу
+            function updateClock() {
+                const date = new Date();
+                const hours = date.getHours();
+                const minutes = date.getMinutes();
+                const seconds = date.getSeconds();
+                const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                $('#clock').text(timeString);
+            }
 
+            // Обновление времени и темы каждую секунду но на самом деле раз в минуту где-то обновляет может я и ошибся сам конечно но это не важно раз в минуту чем плохо
+            setInterval(function() {
+                updateThemeBasedOnTime();
+                updateClock();
+            }, 1000);
+
+            // Вызов первоначального обновления темы и времени
+            updateThemeBasedOnTime();
+            updateClock();
+        });
+    </script>
+    <!--===============================================================================================-->
+
+    <div id="clock" style="position: fixed; top: 10px; left: 10px; color: white; font-size: 16px;"></div> // ну это стили часиков я не добавлял их в твои css там разберетесь что с ними делать
 </body>
 </html>
