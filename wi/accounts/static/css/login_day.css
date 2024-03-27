@@ -79,7 +79,9 @@
       list-style-type: none;
   }
   
-  
+  /*-----CLOCK---*/
+
+  /*--------------*/
   /*---------------------------------------------*/
   input {
       outline: none;
@@ -105,15 +107,15 @@
   textarea:focus::-moz-placeholder { color:transparent; }
   textarea:focus:-ms-input-placeholder { color:transparent; }
   
-  input::-webkit-input-placeholder { color: #999999; }
-  input:-moz-placeholder { color: #999999; }
-  input::-moz-placeholder { color: #999999; }
-  input:-ms-input-placeholder { color: #999999; }
+  input::-webkit-input-placeholder { color: #0000007f; }
+  input:-moz-placeholder { color: #0000007f; }
+  input::-moz-placeholder { color: #0000007f; }
+  input:-ms-input-placeholder { color: #0000007f; }
   
-  textarea::-webkit-input-placeholder { color: #999999; }
-  textarea:-moz-placeholder { color: #999999; }
-  textarea::-moz-placeholder { color: #999999; }
-  textarea:-ms-input-placeholder { color: #999999; }
+  textarea::-webkit-input-placeholder { color: #0000007f; }
+  textarea:-moz-placeholder { color: #0000007f; }
+  textarea::-moz-placeholder { color: #0000007f; }
+  textarea:-ms-input-placeholder { color: #0000007f; }
   
   /*---------------------------------------------*/
   button {
@@ -137,7 +139,7 @@
     font-family: Poppins-Regular;
     font-size: 13px;
     line-height: 1.5;
-    color: #999999;
+    color: #666666;
   }
   
   .txt2 {
@@ -209,7 +211,8 @@
   
   .login100-pic img {
     max-width: 100%;
-    padding: 100px;
+    padding: 150px;
+  
   }
   
   
@@ -221,7 +224,7 @@
   }
   
   .login100-form-title {
-    font-family: Inter;
+    font-family: Montserrat-Bold;
     font-size: 40px;
     color: #fff;
     -webkit-text-stroke: 1px #01a6b876; /* Толщина и цвет обводки */
@@ -247,7 +250,7 @@
     font-family: Poppins-Medium;
     font-size: 15px;
     line-height: 1.5;
-    color: #000000;
+    color: #ffffff;
   
     display: block;
     width: 100%;

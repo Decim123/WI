@@ -28,12 +28,15 @@
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="login100-pic">
-                    <img src="{% static 'images/img-01.png' %}" alt="IMG">
+                    <img class="js-tilt" data-tilt src="{% static 'images/img-02.png' %}" alt="IMG">
+                    <span class="login100-form-title">
+                        WI
+                    </span>
                 </div>
 
                 <form class="login100-form validate-form">
                     <span class="login100-form-title">
-                        Добрый (день) log
+                        Добрый (день)
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -71,7 +74,7 @@
 
                     <div class="container-login100-form-btn">
                         <button class="login100-form-btn">
-                            Login
+                            ЗАХОДИ
                         </button>
                     </div>
                     
@@ -136,5 +139,19 @@
     <!--===============================================================================================-->
 
     <div id="clock" style="position: fixed; top: 10px; left: 10px; color: white; font-size: 16px;"></div> // ну это стили часиков я не добавлял их в твои css там разберетесь что с ними делать
+
+
+    <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+    <script src="{% static 'vendor/tilt/tilt.jquery.min.js' %}"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+    <script src="{% static 'js/main.js' %}"></script>
+    
 </body>
 </html>
