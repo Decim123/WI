@@ -24,6 +24,26 @@
     font-family: Montserrat-Bold;
     src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
   }
+
+  @font-face {
+    font-family: Inter-Black;
+    src: url('../fonts/inter/Inter-Black.ttf'); 
+  }
+
+  @font-face {
+    font-family: Inter-Bold;
+    src: url('../fonts/inter/Inter-Bold.ttf'); 
+  }
+
+  @font-face {
+    font-family: Inter-Medium;
+    src: url('../fonts/inter/Inter-Medium.ttf'); 
+  }
+
+  @font-face {
+    font-family: Inter-Thin;
+    src: url('../fonts/inter/Inter-Thin.ttf'); 
+  }
   
   /*//////////////////////////////////////////////////////////////////
   [ RESTYLE TAG ]*/
@@ -136,15 +156,18 @@
   /*//////////////////////////////////////////////////////////////////
   [ Utility ]*/
   .txt1 {
-    font-family: Poppins-Regular;
-    font-size: 13px;
+    font-family: Inter-Medium;
+    font-size: 22px;
+    color: #fff;;
+    /*-webkit-text-stroke: 1px #000000;  Толщина и цвет обводки */
+    text-shadow: #00000050 1px 2px 10px;
     line-height: 1.5;
-    color: #666666;
   }
   
   .txt2 {
-    font-family: Poppins-Regular;
-    font-size: 13px;
+    font-family: Inter-Thin;
+    font-size: 20px;
+    font-style: italic;
     line-height: 1.5;
     color: #666666;
   }
@@ -214,6 +237,21 @@
     padding: 150px;
   
   }
+
+  .login100-WI {
+    font-family: Inter-Black;
+    font-style: italic;
+    font-size: 56px;
+    color: #fff;
+    /*-webkit-text-stroke: 1px #000000;  Толщина и цвет обводки */
+    text-shadow: #00000050 1px 2px 10px;
+    line-height: 1.5;
+    text-align:center;
+  
+    width: 100%;
+    display: block;
+    padding-bottom: 40px;
+  }
   
   
   /*------------------------------------------------------------------
@@ -224,8 +262,8 @@
   }
   
   .login100-form-title {
-    font-family: Montserrat-Bold;
-    font-size: 40px;
+    font-family: Inter-Bold;
+    font-size: 56px;
     color: #fff;
     -webkit-text-stroke: 1px #01a6b876; /* Толщина и цвет обводки */
     text-shadow: #00000050 1px 2px 10px;
@@ -247,8 +285,8 @@
   }
   
   .input100 {
-    font-family: Poppins-Medium;
-    font-size: 15px;
+    font-family: Inter-Medium;
+    font-size: 20px;
     line-height: 1.5;
     color: #ffffff;
   
@@ -340,9 +378,10 @@
   }
   
   .login100-form-btn {
-    font-family: Montserrat-Bold;
-    font-size: 15px;
+    font-family: Inter-Bold;
+    font-size: 28px;
     line-height: 1.5;
+    text-shadow: #00000050 1px 2px 10px;
     color: #fff;
     text-transform: uppercase;
   
