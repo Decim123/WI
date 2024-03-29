@@ -36,9 +36,9 @@
 
                 <form class="login100-form validate-form">
                     <span class="login100-form-title">
-                        Добрый (день)
+                        <div id="greeting"></div>
                     </span>
-
+                    
                     <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                         <input class="input100" type="text" name="email" placeholder="Email">
                         <span class="focus-input100"></span>
@@ -100,7 +100,7 @@
     </div>
     
     <!--===============================================================================================--> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> #кто-то умный придумал аякс для такой развлекухи
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--кто-то умный придумал аякс для такой развлекухи-->
     <script>
         $(document).ready(function() {
             // Функция для обновления темы в зависимости от времени
@@ -108,10 +108,15 @@
                 const date = new Date();
                 const hours = date.getHours();
                 const loginForm = document.querySelector('.login100-form');
+                let greeting;
                 if (hours >= 6 && hours < 18) { // вот тут указываешь время с какого по какое светлая тема ну темная следоватльно в остальное 
+                    greeting = "Добрый день";
                     $('#theme_css').attr('href', '{% static "css/login_day.css" %}');
+                    $('#greeting').text(greeting);
                 } else {
+                    greeting = "Добрый вечер";
                     $('#theme_css').attr('href', '{% static "css/login_night.css" %}');
+                    $('#greeting').text(greeting);
                 }
             }
 
@@ -138,7 +143,7 @@
     </script>
     <!--===============================================================================================-->
 
-    <div id="clock" style="position: fixed; top: 10px; left: 10px; color: white; font-size: 16px;"></div> // ну это стили часиков я не добавлял их в твои css там разберетесь что с ними делать
+    <div id="clock" style="position: fixed; top: 10px; left: 10px; color: white; font-size: 16px;"></div> <!--  ну это стили часиков я не добавлял их в твои css там разберетесь что с ними делать-->
 
 
     <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
