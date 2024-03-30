@@ -26,6 +26,10 @@ np_column = 0
 conn = sqlite3.connect('raspis.db')
 cursor = conn.cursor()
 
+# Открытие файла
+wb = openpyxl.load_workbook(excel_file)
+sheet = wb[sheet_name]
+
 # Создание таблиц в базе данных
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS NAD (
@@ -53,9 +57,16 @@ cursor.execute('''
     )
 ''')
 
-# Открытие файла
-wb = openpyxl.load_workbook(excel_file)
-sheet = wb[sheet_name]
+def saver():
+    if current_day_of_week:
+            para_time = str(sheet.cell(row=row, column=time_column).value).strip()
+            para = str(sheet.cell(row=row, column=group_coloumn).value)
+            nad_pod = str(sheet.cell(row=row, column=np_column).value)
+            if para_time and para and nad_pod:  # Проверяем что все ключевые значения существуют
+                table_name = 'NAD' if nad_pod == 'НАД' else 'POD'
+                # Обновляем запись для текущего дня недели на основе времени
+                cursor.execute(f"UPDATE {table_name} SET \"{current_day_of_week}\" = ? WHERE Time = ?", (para, para_time))
+                logging.debug(f"Запись в таблицу {table_name}: {para} на время {para_time} в {current_day_of_week}")
 
 # Поиск строки с заголовками
 for row in range(1, 11):
@@ -84,11 +95,12 @@ for column in range(1, 8):
         np_column = column
 print(pn_row, group_coloumn, time_column, np_column)
 
+
 unique_times = set()  # Множество для хранения уникальных времен
 
 for row in range(pn_row, sheet.max_row + 1):
     para_time = str(sheet.cell(row=row, column=time_column).value).strip()
-    # Проверяем, что время не пустое и строка содержит данные расписания
+    # Проверяем что время не пустое и строка содержит данные расписания
     if para_time and any(sheet.cell(row=row, column=col).value for col in range(2, sheet.max_column + 1)):
         if para_time not in unique_times:
             unique_times.add(para_time)
@@ -96,48 +108,15 @@ for row in range(pn_row, sheet.max_row + 1):
             cursor.execute(f"INSERT INTO NAD (Time) VALUES (?) ON CONFLICT(Time) DO NOTHING", (para_time,))
             cursor.execute(f"INSERT INTO POD (Time) VALUES (?) ON CONFLICT(Time) DO NOTHING", (para_time,))
 
-
-def saver():
-    if current_day_of_week:
-            para_time = str(sheet.cell(row=row, column=time_column).value).strip()
-            para = str(sheet.cell(row=row, column=group_coloumn).value)
-            nad_pod = str(sheet.cell(row=row, column=np_column).value)
-            if para_time and para and nad_pod:  # Проверяем что все ключевые значения существуют
-                table_name = 'NAD' if nad_pod == 'НАД' else 'POD'
-                # Обновляем запись для текущего дня недели на основе времени
-                cursor.execute(f"UPDATE {table_name} SET \"{current_day_of_week}\" = ? WHERE Time = ?", (para, para_time))
-                logging.debug(f"Запись в таблицу {table_name}: {para} на время {para_time} в {current_day_of_week}")
-
-# Теперь когда у нас есть записи для каждого времени обновляем данные для каждого дня недели
+# когда у нас есть записи для каждого времени обновляем данные для каждого дня недели
 for row in range(pn_row, sheet.max_row + 1):
     day_of_week_cell_value = sheet.cell(row=row, column=1).value
     if day_of_week_cell_value in days_of_week:
         current_day_of_week = day_of_week_cell_value
         saver()
-        # if current_day_of_week:
-        #     para_time = str(sheet.cell(row=row, column=time_column).value).strip()
-        #     para = str(sheet.cell(row=row, column=group_coloumn).value)
-        #     nad_pod = str(sheet.cell(row=row, column=np_column).value)
-        #     if para_time and para and nad_pod:  # Проверяем что все ключевые значения существуют
-        #         table_name = 'NAD' if nad_pod == 'НАД' else 'POD'
-        #                 # Обновляем запись для текущего дня недели на основе времени
-        #         cursor.execute(f"UPDATE {table_name} SET \"{current_day_of_week}\" = ? WHERE Time = ?", (para, para_time))
-        #         logging.debug(f"Запись в таблицу {table_name}: {para} на время {para_time} в {current_day_of_week}")
     else:
         saver()
-        # if current_day_of_week:
-        #     para_time = str(sheet.cell(row=row, column=time_column).value).strip()
-        #     para = str(sheet.cell(row=row, column=group_coloumn).value)
-        #     nad_pod = str(sheet.cell(row=row, column=np_column).value)
-        #     if para_time and para and nad_pod:  # Проверяем что все ключевые значения существуют
-        #         table_name = 'NAD' if nad_pod == 'НАД' else 'POD'
-        #         # Обновляем запись для текущего дня недели на основе времени
-        #         cursor.execute(f"UPDATE {table_name} SET \"{current_day_of_week}\" = ? WHERE Time = ?", (para, para_time))
-        #         logging.debug(f"Запись в таблицу {table_name}: {para} на время {para_time} в {current_day_of_week}")
 
-                
-# Переносим подтверждение изменений и закрытие соединения за пределы цикла
-logging.debug("Все строки обработаны, выполняется commit")
+# Переносим подтверждение изменений и закрытие соединения
 conn.commit()
-logging.debug("Изменения сохранены, соединение закрывается")
 conn.close()
