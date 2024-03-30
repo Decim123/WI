@@ -450,44 +450,6 @@
   
   
   
-  /*------------------------------------------------------------------
-  [ Responsive ]*/
-  
-  
-  
-  @media (max-width: 992px) {
-    .wrap-login100 {
-      padding: 177px 90px 33px 85px;
-    }
-  
-    .login100-pic {
-      width: 35%;
-    }
-  
-    .login100-form {
-      width: 50%;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .wrap-login100 {
-      padding: 100px 80px 33px 80px;
-    }
-  
-    .login100-pic {
-      display: none;
-    }
-  
-    .login100-form {
-      width: 100%;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .wrap-login100 {
-      padding: 100px 15px 33px 15px;
-    }
-  }
   
   
   /*------------------------------------------------------------------
@@ -575,3 +537,63 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Небольшая тень для лучшего визуального отделения */
   }
   
+
+  /*------------------------------------------------------------------
+  [ Responsive ]*/
+  
+   
+  @media (max-width: 1024px) {
+    .login100-pic img{
+      width: 10px;
+      padding: 0px;
+    }
+  
+    .login100-form {
+      width: 20%;
+    }
+  }
+  
+  
+  @media (max-width: 992px) {
+    .wrap-login100 {
+      padding: 177px 90px 33px 85px;
+    }
+  
+    .login100-pic {
+      width: 35%;
+    }
+  
+    .login100-form {
+      width: 50%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .wrap-login100 {
+      padding: 100px 80px 33px 80px;
+    }
+  
+    .login100-pic {
+      display: none;
+    }
+  
+    .login100-form {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .wrap-login100 {
+      padding: 100px 15px 33px 15px;
+    }
+  }
+  
+
+  @media (max-width: 375px){
+
+  }
+
+
+
+
+/*-----------------CLOCK-----------------------*/
