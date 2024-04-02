@@ -584,6 +584,7 @@
   @media (max-width: 426px) {
     .wrap-login100 {
       padding: 100px 15px 33px 15px;
+      width: 100%;
     }
 
     .login100-form-title {
@@ -610,14 +611,14 @@
 
   @media (max-width: 376px){
     .login100-form-title {
-      font-size: 29px;
+      font-size: 27px;
     }
 
   }
 
   @media (max-width: 321px){
     .login100-form-title {
-      font-size: 20px;
+      font-size: 22px;
     }
 
     .input100 {

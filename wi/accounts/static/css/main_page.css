@@ -1,11 +1,11 @@
 body {
     margin: 0; /* Убираем отступы по умолчанию у body */
     padding: 0; /* Убираем отступы по умолчанию у body */
-    background: #9053c7;
-    background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: linear-gradient(-135deg, #c850c0, #4158d0);
+    background: #fff;
+    background: -webkit-linear-gradient(-50deg, #8ED1A5, #83A2C8);
+    background: -o-linear-gradient(-50deg, #8ED1A5, #83A2C8);
+    background: -moz-linear-gradient(-50deg, #8ED1A5, #83A2C8);
+    background: linear-gradient(-50deg, #8ED1A5, #83A2C8);
     height: 100vh; /* Делаем высоту body равной высоте видимой области браузера */
     margin: 0; /* Убираем отступы по умолчанию у body */
     padding: 0; /* Убираем отступы по умолчанию у body */

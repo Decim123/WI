@@ -119,5 +119,52 @@
     </div>
 
     <script src="{% static 'js/tab_bar.js' %}"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--кто-то умный придумал аякс для такой развлекухи-->
+    <script>
+        $(document).ready(function() {
+            // Функция для обновления темы в зависимости от времени
+            function updateThemeBasedOnTime() {
+                const date = new Date();
+                const hours = date.getHours();
+                const loginForm = document.querySelector('.login100-form');
+                let greeting;
+                if (hours >= 6 && hours < 18) { // вот тут указываешь время с какого по какое светлая тема ну темная следоватльно в остальное 
+
+                    $('#theme_css').attr('href', '{% static "css/main_page.css" %}');
+
+                } else {
+
+                    $('#theme_css').attr('href', '{% static "css/login_night.css" %}');
+
+                }
+            }
+
+            // Функция для часиков в левом верхнем углу
+            function updateClock() {
+                const date = new Date();
+                const hours = date.getHours();
+                const minutes = date.getMinutes();
+                const seconds = date.getSeconds();
+                const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                $('#clock').text(timeString);
+            }
+
+            // Обновление времени и темы каждую секунду но на самом деле раз в минуту где-то обновляет может я и ошибся сам конечно но это не важно раз в минуту чем плохо
+            setInterval(function() {
+                updateThemeBasedOnTime();
+                updateClock();
+            }, 1000);
+
+            // Вызов первоначального обновления темы и времени
+            updateThemeBasedOnTime();
+            updateClock();
+        });
+    </script>
+    <!--===============================================================================================-->
+
+    <div id="clock" style="position: fixed; top: 10px; left: 30px; color: white; font-size: 16px;"></div> <!--  ну это стили часиков я не добавлял их в твои css там разберетесь что с ними делать-->
+
+
 </body>
 </html>
