@@ -1,25 +1,33 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Register</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-</head>
+    <head>
+        <title>WI Register</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--===============================================================================================--> 
+        <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+        <!--===============================================================================================-->    
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/login_day.css' %}" id="theme_css">
+        <!--===============================================================================================-->
+    </head>
 <body>
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
-                <div class="login100-pic js-tilt" data-tilt>
-                    <img src="{% static 'images/img-01.png' %}" alt="IMG">
+                <div class="login100-pic">
+                    <img class="js-tilt" data-tilt src="{% static 'images/img-02.png' %}" alt="IMG">
                 </div>
 
                 <form class="login100-form validate-form" method="post">
@@ -78,7 +86,47 @@
             </div>
         </div>
     </div>
+    <!--===============================================================================================--> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> #кто-то умный придумал аякс для такой развлекухи
+    <script>
+        $(document).ready(function() {
+            // Функция для обновления темы в зависимости от времени
+            function updateThemeBasedOnTime() {
+                const date = new Date();
+                const hours = date.getHours();
+                const loginForm = document.querySelector('.login100-form');
+                if (hours >= 6 && hours < 18) { // вот тут указываешь время с какого по какое светлая тема ну темная следоватльно в остальное 
+                    $('#theme_css').attr('href', '{% static "css/login_day.css" %}');
+                } else {
+                    $('#theme_css').attr('href', '{% static "css/login_night.css" %}');
+                }
+            }
 
+            // Функция для часиков в левом верхнем углу
+            function updateClock() {
+                const date = new Date();
+                const hours = date.getHours();
+                const minutes = date.getMinutes();
+                const seconds = date.getSeconds();
+                const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                $('#clock').text(timeString);
+            }
+
+            // Обновление времени и темы каждую секунду но на самом деле раз в минуту где-то обновляет может я и ошибся сам конечно но это не важно раз в минуту чем плохо
+            setInterval(function() {
+                updateThemeBasedOnTime();
+                updateClock();
+            }, 1000);
+
+            // Вызов первоначального обновления темы и времени
+            updateThemeBasedOnTime();
+            updateClock();
+        });
+    </script>
+    <!--===============================================================================================-->
+
+    <div id="clock" style="position: fixed; top: 10px; left: 30px; color: white; font-size: 16px;"></div> 
+    
     <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
     <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>

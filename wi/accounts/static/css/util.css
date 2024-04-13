@@ -1,3 +1,18 @@
+/*PADDING IN % witm media*/
+
+
+.p-t-- {
+	padding-top: 35%;
+}
+
+@media (max-width: 769px) {
+	.p-t--{
+		padding-top: 20%;
+	}
+}
+
+
+
 /*[ FONT SIZE ]
 ///////////////////////////////////////////////////////////
 */

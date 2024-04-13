@@ -1,11 +1,11 @@
 body {
     margin: 0; /* Убираем отступы по умолчанию у body */
     padding: 0; /* Убираем отступы по умолчанию у body */
-    background: #9053c7;
-    background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: linear-gradient(-135deg, #c850c0, #4158d0);
+    background: #fff;
+    background: -webkit-linear-gradient(-50deg, #8ED1A5, #83A2C8);
+    background: -o-linear-gradient(-50deg, #8ED1A5, #83A2C8);
+    background: -moz-linear-gradient(-50deg, #8ED1A5, #83A2C8);
+    background: linear-gradient(-50deg, #8ED1A5, #83A2C8);
     height: 100vh; /* Делаем высоту body равной высоте видимой области браузера */
     margin: 0; /* Убираем отступы по умолчанию у body */
     padding: 0; /* Убираем отступы по умолчанию у body */
@@ -331,46 +331,5 @@ ul.main-tabs li {
     font-size: 24px; /* Изменен размер текста */
 }
 
-.feed-container {
-  display: flex;
-  flex-wrap: wrap; /* Применяем обертку flex */
-  justify-content: left;
-  position: absolute;
-  top: 1vh; /* Уменьшили верхний отступ */
-  bottom: 1vh;
-  left: 0%;
-  right: 20%;
-  position: fixed;
-}
 
-.feed-rectangle {
-  background-color: var(--white);
-  border-radius: 2.5rem;
-  width: 300px;
-  height: 95vh;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  position: relative;
-  font-family: Arial, sans-serif; /* Добавлено новый шрифт */
-}
-
-.feed-text {
-  background-color: #ffece5;
-  border-radius: 2.5rem;
-  width: calc(100% - 20px);
-  height: 50px;
-  margin: 10px auto;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 24px; /* Изменен размер текста */
-}
 

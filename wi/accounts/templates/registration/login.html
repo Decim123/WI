@@ -28,14 +28,17 @@
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="login100-pic">
-                    <img src="{% static 'images/img-01.png' %}" alt="IMG">
+                    <img class="js-tilt" data-tilt src="{% static 'images/img-02.png' %}" alt="IMG">
+                    <span class="login100-WI">
+                        WI
+                    </span>
                 </div>
 
                 <form class="login100-form validate-form">
                     <span class="login100-form-title">
-                        Добрый (день) log
+                        <div id="greeting"></div>
                     </span>
-
+                    
                     <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                         <input class="input100" type="text" name="email" placeholder="Email">
                         <span class="focus-input100"></span>
@@ -45,7 +48,7 @@
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate = "Password is required">
-                        <input class="input100" type="password" name="pass" placeholder="Password">
+                        <input class="input100" type="password" name="pass" placeholder="Пароль">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>
@@ -71,24 +74,24 @@
 
                     <div class="container-login100-form-btn">
                         <button class="login100-form-btn">
-                            Login
+                            ЗАХОДИ
                         </button>
                     </div>
                     
 
                     <div class="text-center p-t-12">
-                        <span class="txt1">
+                        <!--<span class="txt1">
                             Forgot
-                        </span>
+                        </span>-->
                         <a class="txt2" href="/password_changer/">
-                            Password?
+                            Забыли пароль?
                         </a>
                     </div>
 
-                    <div class="text-center p-t-136">
-                        <a class="txt2" href="/register/">
-                            Create your Account
-                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                    <div class="text-center p-t--">
+                        <a class="txt1" href="/register/">
+                            СОЗДАТЬ АККАУНТ
+                            <!--<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i> икона нужна или нет?-->
                         </a>
                     </div>
                 </form>
@@ -97,7 +100,7 @@
     </div>
     
     <!--===============================================================================================--> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> #кто-то умный придумал аякс для такой развлекухи
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--кто-то умный придумал аякс для такой развлекухи-->
     <script>
         $(document).ready(function() {
             // Функция для обновления темы в зависимости от времени
@@ -105,10 +108,15 @@
                 const date = new Date();
                 const hours = date.getHours();
                 const loginForm = document.querySelector('.login100-form');
+                let greeting;
                 if (hours >= 6 && hours < 18) { // вот тут указываешь время с какого по какое светлая тема ну темная следоватльно в остальное 
+                    greeting = "Добрый день";
                     $('#theme_css').attr('href', '{% static "css/login_day.css" %}');
+                    $('#greeting').text(greeting);
                 } else {
+                    greeting = "Добрый вечер";
                     $('#theme_css').attr('href', '{% static "css/login_night.css" %}');
+                    $('#greeting').text(greeting);
                 }
             }
 
@@ -135,6 +143,20 @@
     </script>
     <!--===============================================================================================-->
 
-    <div id="clock" style="position: fixed; top: 10px; left: 10px; color: white; font-size: 16px;"></div> // ну это стили часиков я не добавлял их в твои css там разберетесь что с ними делать
+    <div id="clock" style="position: fixed; top: 10px; left: 30px; color: white; font-size: 16px;"></div> <!--  ну это стили часиков я не добавлял их в твои css там разберетесь что с ними делать-->
+
+
+    <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+    <script src="{% static 'vendor/tilt/tilt.jquery.min.js' %}"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+    <script src="{% static 'js/main.js' %}"></script>
+    
 </body>
 </html>
