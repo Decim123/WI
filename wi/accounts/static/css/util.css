@@ -2,12 +2,12 @@
 
 
 .p-t-- {
-	padding-top: 35%;
+	padding-top: 20%;
 }
 
 @media (max-width: 769px) {
 	.p-t--{
-		padding-top: 20%;
+		padding-top: 17%;
 	}
 }
 
