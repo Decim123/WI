@@ -250,7 +250,7 @@
   
     width: 100%;
     display: block;
-    padding-top: 7%;
+    padding-top: 30px;
   }
   
   
@@ -289,18 +289,48 @@
     font-size: 20px;
     line-height: 1.5;
     color: #ffffff;
-  
+    
+
     display: block;
     width: 100%;
     background: #FFFFFFB2;
     height: 50px;
-    border-color: #277571;
-    border-width: 3px;
     border-radius: 25px;
     padding: 0 30px 0 68px;
   }
   
   
+
+/*------------ check---------------*/
+
+  .input100-1 {
+    padding: 5% 10% 1% 7%;
+
+  }
+
+  .input100-1 span{
+    font-family: Inter-Medium;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 2.5;
+    color: #ffffff;
+    
+
+    display: inline-block;
+    width: 100%;
+
+  }
+
+  .input100-1 input {
+    line-height: 2.5;
+    width: 20px;
+    height: 20px;
+
+
+  }
+
+
+
   /*------------------------------------------------------------------
   [ Focus ]*/
   .focus-input100 {
@@ -376,7 +406,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 10%;
+    padding-top: 7%;
   }
   
   .login100-form-btn {
