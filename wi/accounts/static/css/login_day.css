@@ -201,7 +201,7 @@
   }
   
   .wrap-login100 {
-    width: 75%;
+    width: 80%;
     background: #fff;
     background: -webkit-linear-gradient(-60deg,#3FB168, #388295 73%);
     background: -o-linear-gradient(-60deg, #3FB168, #388295 73%);
@@ -223,7 +223,7 @@
   /*------------------------------------------------------------------
   [  ]*/
   .login100-pic {
-    width: 45%;
+    width: 46%;
     background-color: #fff;
     background: -webkit-linear-gradient(-260deg, #3E9379, #53A99F 75%);
     background: -o-linear-gradient(-260deg, #3E9379, #53A99F 75%);
@@ -257,8 +257,8 @@
   /*------------------------------------------------------------------
   [  ]*/
   .login100-form {
-    width: 55%;
-    padding: 2% 7% 7% 7%;
+    width: 54%;
+    padding: 10% 5% 2% 5%;
   }
   
   .login100-form-title {
@@ -272,17 +272,18 @@
   
     width: 100%;
     display: block;
-    padding-bottom: 40px;
+    padding-bottom: 17%;
   }
   
   
   /*---------------------------------------------*/
   .wrap-input100 {
     position: relative;
-    width: 100%;
+    width: 77%;
     z-index: 1;
-    margin-bottom: 15px;
-  }
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
   
   .input100 {
     font-family: Inter-Medium;
@@ -294,8 +295,8 @@
     display: block;
     width: 100%;
     background: #FFFFFFB2;
-    height: 50px;
-    border-radius: 25px;
+    height: 55px;
+    border-radius: 80px;
     padding: 0 30px 0 68px;
   }
   
@@ -304,13 +305,13 @@
 /*------------ check---------------*/
 
   .input100-1 {
-    padding: 5% 10% 1% 5%;
+    padding: 5% 10% 1% 19%;
 
   }
 
   .input100-1 span{
     font-family: Inter-Medium;
-    font-size: 20px;
+    font-size: 16px;
     font-style: italic;
     line-height: 2.5;
     color: #ffffff;
@@ -323,8 +324,8 @@
 
   .input100-1 input {
     line-height: 2.5;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
 
 
   }
@@ -417,9 +418,9 @@
     color: #fff;
     text-transform: uppercase;
   
-    width: 70%;
-    height: 50px;
-    border-radius: 25px;
+    width: 77%;
+    height: 60px;
+    border-radius: 80px;
     border-color: #277571;
     border-width: 3px;
     background: #FFFFFFB2;

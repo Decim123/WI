@@ -2,12 +2,32 @@
 
 
 .p-t-- {
+	padding-top: 5%;
+}
+
+@media (max-width: 769px) {
+	.p-t--{
+		padding-top: 2%;
+	}
+}
+
+.p-t--- {
+	padding-top: 10%;
+}
+
+@media (max-width: 769px) {
+	.p-t--{
+		padding-top: 8%;
+	}
+}
+
+.p-t1 {
 	padding-top: 20%;
 }
 
 @media (max-width: 769px) {
 	.p-t--{
-		padding-top: 17%;
+		padding-top: 12%;
 	}
 }
 
