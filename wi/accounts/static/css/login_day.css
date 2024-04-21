@@ -169,7 +169,7 @@
     font-size: 20px;
     font-style: italic;
     line-height: 1.5;
-    color: #666666;
+    color: #fff;
   }
   
   
@@ -201,12 +201,12 @@
   }
   
   .wrap-login100 {
-    width: 75%;
+    width: 80%;
     background: #fff;
-    background: -webkit-linear-gradient(-40deg, #6EFF9E, #fff);
-    background: -o-linear-gradient(-40deg, #6EFF9E, #fff);
-    background: -moz-linear-gradient(-40deg, #6EFF9E, #fff);
-    background: linear-gradient(-40deg, #6EFF9E, #fff);
+    background: -webkit-linear-gradient(-60deg,#3FB168, #388295 73%);
+    background: -o-linear-gradient(-60deg, #3FB168, #388295 73%);
+    background: -moz-linear-gradient(-60deg, #3FB168, #388295 73%);
+    background: linear-gradient(-60deg, #3FB168, #388295 73%);
     border-radius: 80px;
     overflow: hidden;
   
@@ -223,12 +223,12 @@
   /*------------------------------------------------------------------
   [  ]*/
   .login100-pic {
-    width: 45%;
+    width: 46%;
     background-color: #fff;
-    background: -webkit-linear-gradient(-0deg, #01C48A, #01A4BA);
-    background: -o-linear-gradient(-0deg, #01C48A, #01A4BA);
-    background: -moz-linear-gradient(-0deg, #01C48A, #01A4BA);
-    background: linear-gradient(-0deg, #01C48A, #01A4BA);
+    background: -webkit-linear-gradient(-260deg, #3E9379, #53A99F 75%);
+    background: -o-linear-gradient(-260deg, #3E9379, #53A99F 75%);
+    background: -moz-linear-gradient(-260deg, #3E9379, #53A99F 75%);
+    background: linear-gradient(-260deg, #3E9379, #53A99F 75%);
     border-radius: 80px;
   }
   
@@ -241,7 +241,7 @@
   .login100-WI {
     font-family: Inter-Black;
     font-style: italic;
-    font-size: 56px;
+    font-size: 54px;
     color: #fff;
     /*-webkit-text-stroke: 1px #000000;  Толщина и цвет обводки */
     text-shadow: #00000050 1px 2px 10px;
@@ -250,15 +250,15 @@
   
     width: 100%;
     display: block;
-    padding-top: 25%;
+    padding-top: 30px;
   }
   
   
   /*------------------------------------------------------------------
   [  ]*/
   .login100-form {
-    width: 55%;
-    padding: 7%;
+    width: 54%;
+    padding: 10% 5% 2% 5%;
   }
   
   .login100-form-title {
@@ -272,33 +272,66 @@
   
     width: 100%;
     display: block;
-    padding-bottom: 40px;
+    padding-bottom: 17%;
   }
   
   
   /*---------------------------------------------*/
   .wrap-input100 {
     position: relative;
-    width: 100%;
+    width: 77%;
     z-index: 1;
-    margin-bottom: 10px;
-  }
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
   
   .input100 {
     font-family: Inter-Medium;
     font-size: 20px;
     line-height: 1.5;
     color: #ffffff;
-  
+    
+
     display: block;
     width: 100%;
-    background: #01AEAC;
-    height: 50px;
-    border-radius: 25px;
+    background: #FFFFFFB2;
+    height: 55px;
+    border-radius: 80px;
     padding: 0 30px 0 68px;
   }
   
   
+
+/*------------ check---------------*/
+
+  .input100-1 {
+    padding: 5% 10% 1% 19%;
+
+  }
+
+  .input100-1 span{
+    font-family: Inter-Medium;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 2.5;
+    color: #ffffff;
+    
+
+    display: inline-block;
+    width: 100%;
+
+  }
+
+  .input100-1 input {
+    line-height: 2.5;
+    width: 16px;
+    height: 16px;
+
+
+  }
+
+
+
   /*------------------------------------------------------------------
   [ Focus ]*/
   .focus-input100 {
@@ -374,7 +407,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 10%;
+    padding-top: 7%;
   }
   
   .login100-form-btn {
@@ -385,10 +418,12 @@
     color: #fff;
     text-transform: uppercase;
   
-    width: 100%;
-    height: 50px;
-    border-radius: 25px;
-    background: #01C48C;
+    width: 77%;
+    height: 60px;
+    border-radius: 80px;
+    border-color: #277571;
+    border-width: 3px;
+    background: #FFFFFFB2;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -406,7 +441,7 @@
 
 
   .login100-form-btn:hover {
-    background: #333333;
+    background: #434343;
   }
   
   /*----------------Login with----------------*/
