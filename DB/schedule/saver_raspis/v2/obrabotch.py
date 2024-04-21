@@ -37,7 +37,7 @@ def get_schedule(day_of_week, group, weeks_forward=0, weeks_backward=0):
 day_of_week = "Понедельник"  # День недели также название таблицы
 group = "1-МГ-14"
 weeks_forward = 0 # сколько недель вперед и если = 0 то будет только текущая короче потыкай поймешь
-weeks_backward = 0 #т оже самое но назад
+weeks_backward = 0 # тоже самое но назад
 
 for d in range(-weeks_backward, weeks_forward + 1):
     schedule = get_schedule(day_of_week, group, weeks_forward=d, weeks_backward=weeks_backward)
